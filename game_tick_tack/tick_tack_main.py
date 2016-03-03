@@ -3,8 +3,7 @@ __author__ = 'asee2278'
 
 
 tick = [ [None,None,None],[None,None,None],[None,None,None]]
-turn =0
-player = 2
+player = 1
 
 def printBoard() :
     print "$$$ Current status $$$$$$$$$$$$$$ "
@@ -64,14 +63,11 @@ print "welcome to Tic Tack game ... "
 
 
 
-def takeInput():
-    global player
-    if  player ==1 : player = 2
-    else : player = 2
+def takeInput(ply):
 
-    if player == 1 : s = 'X'
-    else : s = 'Y'
-    print "player {} with sign {} take your turn and select coordinate".format(player,s)
+    if ply == 1 : s = 'X'
+    else : s = '0'
+    print "player {} with sign {} take your turn and select coordinate".format(ply,s)
     r = int(raw_input("Enter Row ... "))
     c = int(raw_input("Enter Column ... "))
 
@@ -79,9 +75,15 @@ def takeInput():
 
 
 
-
+counter = 0
 while not validateBoard() :
-    takeInput()
+    counter = counter + 1
+    if counter % 2 == 0 :
+        ply = 2
+    else :
+        ply = 1
+
+    takeInput(ply)
     printBoard()
 
 print "Congratulation player",player
