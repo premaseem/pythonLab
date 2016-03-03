@@ -75,15 +75,16 @@ def takeInput(ply):
 
 
 
-counter = 0
+counter = 1
 while not validateBoard() :
-    counter = counter + 1
+
     if counter % 2 == 0 :
         ply = 2
     else :
         ply = 1
 
-    takeInput(ply)
+    if takeInput(ply) :
+        counter = counter + 1
     printBoard()
 
 print "Congratulation player",player
