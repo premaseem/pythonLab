@@ -5,7 +5,8 @@ class Animal(object) :
     def __init__(self):
         self.name = "kallu kutta"
 
-
+    def sex(self):
+        print "do sex"
 
     def eat(self):
         name = "most sexy"
