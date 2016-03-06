@@ -1,7 +1,4 @@
-__author__ = 'asee2278'
-
-
-
+# Author : Aseem Jain
 tick = [ [None,None,None],[None,None,None],[None,None,None]]
 player = 1
 
@@ -49,19 +46,22 @@ def validateColumn(num) :
     return False
 
 def validateBoard():
-    if validateRow() or validateDiagonal() or validateColumn(0) or validateColumn(1) or validateColumn(2):
+    if validateRow() or validateDiagonal() or validateColumn(0) or validateColumn(1) or validateColumn(2) or valiateDraw() :
         print "Thanks for playing "
         return True
 
     return False
 
+def valiateDraw() :
+    for x in range(0,3):
+        for y in range(0,3):
+            if tick[x][y] == None :
+                # print "Game is a Tie ;-) "
+                return False
+    print "Game is a Tie ;-) "
+    return True
+
 print "welcome to Tic Tack game ... "
-
-
-
-
-
-
 
 def takeInput(ply):
 
@@ -72,7 +72,6 @@ def takeInput(ply):
     c = int(raw_input("Enter Column ... "))
 
     return inputBoard(s,r,c)
-
 
 
 counter = 1
@@ -87,7 +86,7 @@ while not validateBoard() :
         counter = counter + 1
     printBoard()
 
-print "Congratulation player",player
+print "Congratulation for winning :-) "
 
 
 

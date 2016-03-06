@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 
-print "Hello, Premaseem !"
-name = " ashriya rai "
+player = 1
 
-print "Hello, world  !"
+def swap(playerl):
+    if playerl == 2 : playerl =1;
+    else : playerl = 2
+    return playerl
+
+player = swap(2)
+print player
