@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="aws-java-sdk-1.9.6">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/amazonaws/aws-java-sdk/1.9.6/aws-java-sdk-1.9.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://$MAVEN_REPOSITORY$/com/amazonaws/aws-java-sdk/1.9.6/aws-java-sdk-1.9.6.jar!/" recursive="false" />
+  </library>
+</component>

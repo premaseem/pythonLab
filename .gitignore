@@ -1,12 +1,4 @@
 
-.idea/.name
-
-.idea/modules.xml
-
-.idea/misc.xml
-
-.idea/pythonPlayground.iml
-
-.idea/vcs.xml
-
-.idea/workspace.xml
+.idea
+.idea/*
+.idea/libraries
