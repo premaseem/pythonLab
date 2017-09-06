@@ -1,0 +1,26 @@
+__author__ = 'asee2278'
+
+
+#!/usr/bin/python
+
+Money = 2000
+def AddMoney():
+    # Uncomment the following line to fix the code:
+    global Money
+    Money =  Money + 1
+
+print(Money)
+AddMoney()
+print(Money)
+
+
+
+class Bank:
+
+    accountBalance=10
+    def deposit(self,amount):
+        global accountBalance
+        accountBalance = accountBalance + amount
+        return accountBalance
+
+print(Bank().deposit(20))
