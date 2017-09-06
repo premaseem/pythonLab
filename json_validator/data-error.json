@@ -1,0 +1,14 @@
+{
+  "address":{
+    "streetAddress": "4114 Medical Drive",
+    "city":"New York",
+    "houseNumber":12
+  },
+  "phoneNumber":
+  [
+    {
+      "type":"home",
+      "number":"212 555-1234"
+    }
+  ]
+}
