@@ -1,0 +1,14 @@
+{
+  "address1":{
+    "streetAddress": "21 2nd Street",
+    "city":"New York",
+    "houseNumber":"12"
+  },
+  "phoneNumber":
+  [
+    {
+      "type":"home",
+      "number":2125551234
+    }
+  ]
+}
