@@ -48,7 +48,7 @@ def create_task():
     validation_error = validator( schema, request.json)
     if len(validation_error) == 0:
         address_list.append(request.json)
-        return jsonify({'address': request.json}), 201
+        return jsonify(request.json), 201
     else:
         return jsonify({'payload_error': validation_error}), 400
 
