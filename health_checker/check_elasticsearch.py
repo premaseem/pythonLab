@@ -4,7 +4,9 @@ import requests
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-ip = '10.126.69.147'
+ip = '10.126.69.34'
+# ip = '10.126.71.5'
+
 
 conn_string = 'http://{}:{}@{}:9200/'
 user = 'elastic'
@@ -69,3 +71,4 @@ def elastic_health_check(host_ip):
 
 
 elastic_health_check(ip)
+# curl -u elastic:elastic -XGET 10.126.69.34:9200/_cat/health
