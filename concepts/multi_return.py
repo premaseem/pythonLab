@@ -17,3 +17,7 @@ print(" number2 is ", nums)
 # number1 is 10
 # number1 is 10
 # number2 is (10, 2)
+
+
+_, password  = None, "abc"
+print(_,password)
