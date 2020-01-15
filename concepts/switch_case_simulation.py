@@ -10,3 +10,7 @@ try:
 except:
     pass
 print("max")
+
+marks=99
+result = ("Fail","Pass") [marks > 70]
+print(result)
