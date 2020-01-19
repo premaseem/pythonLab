@@ -1,7 +1,8 @@
 # Question 1: Create an empty set called my_ints, once it's created
 # use the type function (along with print) to print the type of my_ints.
 ## Write your code below, 2 lines
-
+my_ints = {1,2}
+print(type(my_ints))
 
 # End question 1
 
@@ -10,7 +11,11 @@
 # elements. No print required.
 my_list = [1,1,'rails',7,6,2,'java','ruby',8,9,10,21,'rails',7,2,1000,6,'python','java']
 ## Write your code below, 2 lines
-
+my_set = set(my_list)
+print(type(my_set))
+my_list = list(my_set)
+print(type(my_list))
+print(my_list)
 
 # End question 2
 
@@ -18,12 +23,14 @@ my_list = [1,1,'rails',7,6,2,'java','ruby',8,9,10,21,'rails',7,2,1000,6,'python'
 # output when you run the intersection method on my_ints and pass it my_set
 # (created in question 2) as the argument.
 ## Write your code below, 2 lines
-
-
+my_ints.add(8)
+intersec = my_ints.intersection(my_set)
+print(intersec)
 # End question 3
 
 # Question 4: Test (and print) if 'rails' is in my_set
 ## Write your code below, 1 line
+print("Is rails in set" , 'rails' in my_set )
 
 # End question 4
 
@@ -31,6 +38,7 @@ my_list = [1,1,'rails',7,6,2,'java','ruby',8,9,10,21,'rails',7,2,1000,6,'python'
 # the elements in it (no special formatting).
 my_random_tuple = ('first',4,5,8,'hi there',5,2,1,9,10)
 ## Write your code below
-
+for item in my_random_tuple:
+    print(item, end = "")
 
 # End question 5
