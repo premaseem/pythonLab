@@ -1,21 +1,64 @@
-# Objective: Remove elements present in other list  using list comprehension
-# @Author Aseem Jain
+from random import randint
+
+num_list = []
+for num in range(0,10):
+    num_list.append(randint(0,1000))
+print(num_list)
+
+# one liner list comprehension
+comp_num_list = [randint(0, 1000) for num in range(0,10)]
+
+#########################
+
+h_letters = []
+
+for letter in 'human':
+    h_letters.append(letter)
+
+print(h_letters)
+
+h_letters = [c for c in 'god']
+print(h_letters)
+
+#########################
+# list fist 10 even numbers
+r = [n for n in range(20) if n%2 == 0 ]
+print("even num", r)
+
+#########################
+# Example 5: Nested IF with List Comprehension
+
+r = [n for n in range(100) if n % 2 == 0 if n % 5 == 0]
+print("common multiple of 5 and 2 ", r)
+
+#########################
+
+obj = ["Even" if i% 2==0 else "Odd" for i in range(10)]
+print(obj)
 
 
-# initializing list
-test_list = [1, 3, 4, 6, 7]
+#########################
+# compare 2 equal list and populate resultant with smaller numbers
+a  = [2,9,4]
+b  = [3,5,10]
 
-# initializing remove list
-remove_list = [3, 6]
+# for x in a:
+#     for y in b:
 
-# printing original list
-print("The original list is : " + str(test_list))
 
-# printing remove list
-print("The original list is : " + str(remove_list))
+r = []
+for n1,n2 in zip(a,b):
+    r.append((n1,n2) [n1 >n2])
+    # r.append((n1,n2) if n1>n2 )
+    # if n1 < n2:
+    #     r.append(n1)
+    # else:
+    #     r.append(n2)
 
-# using list comprehension to perform task
-res = [i for i in test_list if i not in remove_list]
+print(r)
 
-# printing result
-print("The list after performing remove operation is : " + str(res))
+r = [n1 if n1 < n2 else n2 for n1,n2 in zip (a,b)]
+print(r)
+
+r = [(n1,n2) [n1 >n2] for n1,n2 in zip(a,b)]
+print(r)
