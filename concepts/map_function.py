@@ -12,5 +12,18 @@ print(l1)
 names = ["sapna", "ranu", "sandhya", "swati", "trishla"]
 for n in map(str.capitalize, names):
     print(n)
-print(", ".join(list((map(str.capitalize, names)))))
+# print(", ".join(list((map(str.capitalize, names)))))
+
+
+########################
+# creating a custom map
+def my_map(f, lst):
+    for i in lst:
+        yield f(i)
+
+o = my_map(str.capitalize, names)
+print(next(o))
+print(next(o))
+print(list(o))
+
 
