@@ -5,4 +5,9 @@ def fibo(n):
         return 1
     return fibo(n-1) + fibo(n-2)
 
-print(fibo(7))
+def iter(n):
+    a,b = 0,1
+    for x in range(n):
+        a,b = b,a+b
+    return a
+print(iter(1))

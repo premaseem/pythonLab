@@ -12,8 +12,11 @@
 # 2 second time and 3 third time
 def simpleGeneratorFun():
     yield 1
+    print("returned 1st yield")
     yield 2
+    print("returned 2nd yield")
     yield "3"
+    print("returned 3rd yield")
 
 o = simpleGeneratorFun()
 print(type(o))
@@ -24,7 +27,7 @@ print(type(o))
 print(next(o)); # In Python 3, __next__()
 print(next(o));
 print(next(o));
-print(next(o));
+# print(next(o));
 
 ######################################
 

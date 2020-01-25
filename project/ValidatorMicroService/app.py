@@ -3,8 +3,7 @@ __author__ = 'asee2278'
 #!flask/bin/python
 from flask import Flask, jsonify
 from flask import make_response, request
-from ValidatorMicroService.db.in_memory import address_list
-from ValidatorMicroService.validator import SchemaValidator
+from project.ValidatorMicroService.db.in_memory import address_list
 import json
 import jsonschema
 

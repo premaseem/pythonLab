@@ -38,7 +38,9 @@ print("Is rails in set" , 'rails' in my_set )
 # the elements in it (no special formatting).
 my_random_tuple = ('first',4,5,8,'hi there',5,2,1,9,10)
 ## Write your code below
-for item in my_random_tuple:
-    print(item, end = "")
-
+sum = 0
+for item in my_ints:
+    # print(item, end = "")
+    sum +=item
+print(sum)
 # End question 5

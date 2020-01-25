@@ -1,5 +1,8 @@
 from optparse import OptionParser
 
+def call_method(arg = None):
+    print("method called with arg", arg)
+
 if __name__ == '__main__':
     # provide options
     parser = OptionParser()

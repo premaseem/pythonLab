@@ -17,6 +17,7 @@ print(f" {mymin} is min value using normal ternary way. ")
 
 # tuple based ternary (most effective)
 mymin = (num2, num1) [num1 < num2]
+
 print(f" {mymin} is min value using tuple based ternary way. ")
 
 # dictionary based

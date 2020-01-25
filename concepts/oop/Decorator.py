@@ -3,15 +3,15 @@ __author__ = 'asee2278'
 def interceptor(func):
 
     def wrapper_func():
-        print "code before call of func"
+        print "code before call of function"
         func()
-        print "code after call of func"
+        print "code after call of function"
     return wrapper_func
 
 def wrapper_func(func):
-    print "code before call of func"
+    print "code before call of function"
     func()
-    print "code after call of func"
+    print "code after call of function"
     return wrapper_func
 
 

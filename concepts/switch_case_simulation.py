@@ -1,7 +1,7 @@
 # switch of choice and case of grade assignment
-choice = 85
+choice = 90
 try:
-    grade=  {90:"a",80:"b", 70:"c" } [choice]
+    grade=  {90:print("ais win"),80:"b", 70:"c" } [choice]
 except:
     grade ="unknown"
 print(grade)
@@ -12,5 +12,5 @@ except:
 print("max")
 
 marks=99
-result = ("Fail","Pass") [marks > 70]
+result = ("Fail", "Pass")[marks > 70]
 print(result)

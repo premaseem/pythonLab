@@ -17,9 +17,13 @@ for n in map(str.capitalize, names):
 
 ########################
 # creating a custom map
+# def my_map(f, lst):
+#     for i in lst:
+#         yield f(i)
+
+# generator comprehension
 def my_map(f, lst):
-    for i in lst:
-        yield f(i)
+    return (f(i) for i in lst)
 
 o = my_map(str.capitalize, names)
 print(next(o))
