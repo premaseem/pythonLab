@@ -47,3 +47,17 @@ def merge(l,r):
     return f
 ans = merge(l,r)
 print(ans)
+
+def divide(arr):
+    if len(arr) == 1:
+        return arr[:]
+    else:
+        middle = len(arr) // 2
+        la = divide(arr[:middle])
+        ra = divide(arr[middle:])
+        return merge(la,ra)
+
+l = [4, 8, 3, 9, 2]
+e = [2, 3, 4, 8, 9]
+ans = divide(l)
+print("Is sorted properly", e == ans)
