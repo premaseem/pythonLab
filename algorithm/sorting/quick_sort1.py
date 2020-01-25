@@ -1,4 +1,8 @@
-# optimized bubble sort to do minimum number of iteration
+"""
+Returns sorted list of integers using Quicksort
+Input: Unsorted list of integers
+Note: This is not an in-place implementation
+"""
 
 l = [10, 9, 4, 7, 2, 4]
 # l = [1,2,3,4,5]
