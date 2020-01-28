@@ -13,18 +13,24 @@ def sol1(h):
         s.add(c.next.data)
         c = c.next
 
+def is_dup(h, data):
+  node = h
+  c = 0
+  while  node is not None:
+    if data == node.data:
+      c += 1
+    node = node.next
+  return c > 1
 
-def sol2(head):
-  node = head
-  if node:
-    values = {node.data: True}
-    while node.next:
-      if node.next.data in values:
-        node.next = node.next.next
-      else:
-        values[node.next.data] = True
-        node = node.next
-  return head
+# Without using the buffer
+def sol2(h):
+  c = h
+  while c.next is not None:
+    if is_dup(h,c.next.data):
+      c.next = c.next.next
+    else:
+      c = c.next
+
 
 class Node():
   def __init__(self, data, next):
