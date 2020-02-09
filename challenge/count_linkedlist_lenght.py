@@ -35,6 +35,11 @@ class ll:
         node = node.n
         return self.len_rec(node, cnt)
 
+    def len_rec_1(self,node):
+        if not node:
+            return 0
+        return 1 + self.len_rec_1(node.n )
+
 
 o = ll()
 o.add(1)
@@ -45,3 +50,4 @@ o.add(4)
 print(o.head)
 assert 4 == o.len_itr()
 assert 4 == o.len_rec(o.head)
+assert 4 == o.len_rec_1(o.head)
