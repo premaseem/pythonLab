@@ -28,8 +28,19 @@ def sol4(s):
         return False
   return True
 
+def sol5(s):
+  s = list(s)
+  while s:
+    if s.pop() in s:
+        return False
+  return True
+
 class Test(unittest.TestCase):
   def test(self):
+
+    self.assertFalse(sol5('aseem'))
+    self.assertTrue(sol5('jain'))
+
     self.assertFalse(sol1('aseem'))
     self.assertTrue(sol1('jain'))
 
