@@ -16,6 +16,24 @@ def convert_to_string(num):
         return "-"+f
     return f
 
+def convert_to_decimal(s):
+    is_negative = False
+    if s[0] == "-":
+        is_negative = True
+    s = s[1:]
+    s = list(s)
+    p = 0
+    f = 0
+    while s:
+        e = s.pop()
+        e = ord(e) - ord('0')
+        f = f + (10 ** p * e)
+        p += 1
+
+    if is_negative:
+        return f * -1
+    return f
 
 
 assert "-245" == convert_to_string(-245)
+assert -245 == convert_to_decimal("-245")
