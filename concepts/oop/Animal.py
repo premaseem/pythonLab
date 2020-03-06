@@ -6,16 +6,16 @@ class Animal(object) :
         self.name = "kallu kutta"
 
     def sex(self):
-        print "do sex"
+        print ("do sex")
 
     def eat(self):
         name = "most sexy"
-        print name + "is eating"
+        print (name + "is eating")
         return self.name
 
 
 kallu = Animal()
-print kallu.eat();
+print (kallu.eat())
 
 
 class Shape :
@@ -26,6 +26,6 @@ class Shape :
     # print "This is shape is {}".format(name)
     shape = "circle"
     def print_shape(self):
-        print self.shape;
+        print (self.shape)
 
 gola = Shape("cirlce")
