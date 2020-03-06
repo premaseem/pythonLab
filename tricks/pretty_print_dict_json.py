@@ -5,7 +5,13 @@ dict = {"a":1,'c':2,"b":34,"city":"san Antonio"}
 
 print(dict)
 
+# Can use expandable tabs
+for k, v in dict.items():
+    print("{}:  \t  {} ".format(k, v).expandtabs(50))
+
+# can convert it in json with indentation
 print(json.dumps(dict, indent=2, sort_keys=True))
+
 
 
 """ Sample Output """
@@ -17,3 +23,9 @@ print(json.dumps(dict, indent=2, sort_keys=True))
 #     "c": 2,
 #     "city": "san Antonio"
 # }
+
+# With expand tabs
+# a:                                                  1
+# c:                                                  2
+# b:                                                  34
+# city:                                               san Antonio
