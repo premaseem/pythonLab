@@ -36,4 +36,45 @@ print("aseem jain".find("m",0,5))
 # Replace: Return a copy with all occurrences of substring old replaced by new.
 print("aseem".replace("e","x"))
 
+#####################################
+# convert string in list of chars
+s = "aseem jain"
+sa = list(s)
+set = set(s)
+print(sa,set)
 
+#####################################
+# check if char or string contains special chars, is numeric, is a negative number or alphabetic
+
+# String does not have special chars including space
+"aseem456".isalnum()
+
+# Find out string is only alphabetic
+"aseem".isalpha()
+
+# Find string is digit or numeric, ( does not check negative numbers)
+"456".isnumeric()
+
+# Find string is negative number.
+num = "-486"
+def is_num(num):
+    try:
+        int(num)
+        return True
+    except:
+        return False
+
+#####################################
+# Populate a matrix
+
+input = ["YYNN","YYYN","NYYN","NNNY"]
+m = []
+for e in a:
+    m.append(list(e))
+
+    # ['Y', 'Y', 'N', 'N']
+    # ['Y', 'Y', 'Y', 'N']
+    # ['N', 'Y', 'Y', 'N']
+    # ['N', 'N', 'N', 'Y']
+
+#####################################
