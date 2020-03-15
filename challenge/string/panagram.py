@@ -13,10 +13,17 @@ def getMissingLetters(s):
     ans = "".join(diff)
     print(ans)
     return ans
+
 i1 =  "A quick brown fox jumps over the lazy dog"
 i2 =  "A quick brown fox jumps over the dog"
 i3 =  "A quick brown fox jumps over the lafy dog"
+i4 = "A slow yellow fox crawls under the proactive dog"
+i5 = "Lions, and tigers, and bears, oh my!"
+i6 = ""
 
 assert getMissingLetters(i1) is ""
 assert getMissingLetters(i3) == "z"
 assert getMissingLetters(i2) == "lyz"
+assert getMissingLetters(i4) == "bjkmqz"
+assert getMissingLetters(i5) == "cfjkpquvwxz"
+assert getMissingLetters(i6) == "abcdefghijklmnopqrstuvwxyz"
