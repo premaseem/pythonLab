@@ -64,3 +64,19 @@ r = [(n1,n2) [n1 >n2] for n1,n2 in zip(a,b)]
 print(r)
 
 #####################
+l = [1,2,3,4,5,6]
+def convert_to_str(x):
+    return str(x*x)
+
+l = list(map(lambda x:str(x*x),l))
+
+l = [str(x*x) for x in l]
+
+# calling external fun on each element
+l = [convert_to_str(x) for x in l]
+
+# calling lambda fun on each element
+l = [(lambda x:str(x*x))(x) for x in l]
+print(l)
+
+
