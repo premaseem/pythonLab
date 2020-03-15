@@ -20,8 +20,8 @@ print(arr)
 #####################################
 
 # Join: The string whose method is called is inserted in between each given string.
-str = "+".join(arr)
-print(str)
+stri = "+".join(arr)
+print(stri)
 #####################################
 
 # Count: Return the number of non-overlapping occurrences of substring
@@ -30,18 +30,18 @@ print("aseem".count("e"))
 # find char in word, can also specify length range returns -1 if not find, else index
 
 "aseem".find("s")
-print("aseem jain".find("m",0,5))
+print("aseem jain".find("m", 0, 5))
 #####################################
 
 # Replace: Return a copy with all occurrences of substring old replaced by new.
-print("aseem".replace("e","x"))
+print("aseem".replace("e", "x"))
 
 #####################################
 # convert string in list of chars
 s = "aseem jain"
 sa = list(s)
 set = set(s)
-print(sa,set)
+print(sa, set)
 
 #####################################
 # check if char or string contains special chars, is numeric, is a negative number or alphabetic
@@ -57,6 +57,8 @@ print(sa,set)
 
 # Find string is negative number.
 num = "-486"
+
+
 def is_num(num):
     try:
         int(num)
@@ -64,12 +66,50 @@ def is_num(num):
     except:
         return False
 
+
+#####################################
+""" ARRAYS  LISTS """
+#####################################
+
+# sort array in place in reverse order
+
+arr = [1, 2, 5, 7, 5, 4, 3, 1]
+arr.sort(reverse=True)
+
+#####################################
+
+# sort custom object by key
+class Custom():
+    def __init__(self,fn,ln):
+        self.fn = fn
+        self.ln = ln
+    def __repr__(self):
+        return self.fn + " " + self.ln
+
+# obj = Custom("aseem", "jain")
+custom_array = [Custom("aseem", "jain"),Custom("wseem", "jain"),Custom("nehal", "zain") ]
+# custom_array=[]
+print(custom_array)
+
+custom_array.sort(key=lambda x: x.fn, reverse=True)
+print(custom_array)
+custom_array.sort(key=lambda x: x.ln, reverse=True)
+print(custom_array)
+#####################################
+# List comprehension : convert num list into string list
+
+arr = [3,4,5,4,3,2]
+arrs = [str(x) for x in arr]
+print(arr)
+
+#####################################
+""" MATRIX  """
 #####################################
 # Populate a matrix
 
-input = ["YYNN","YYYN","NYYN","NNNY"]
+input = ["YYNN", "YYYN", "NYYN", "NNNY"]
 m = []
-for e in a:
+for e in input:
     m.append(list(e))
 
     # ['Y', 'Y', 'N', 'N']
