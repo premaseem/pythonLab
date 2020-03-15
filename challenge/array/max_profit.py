@@ -11,4 +11,4 @@ def solution(prs):
     return max
 
 
-assert  11 == solution([6,0,-1,10])
+assert  11 is solution([6,0,-1,10])
