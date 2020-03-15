@@ -9,9 +9,18 @@ l1 = [2,3,4,5,6]
 l1 = list(map(lambda x: x**2, l1))
 print(l1)
 
+
 names = ["sapna", "ranu", "sandhya", "swati", "trishla"]
-for n in map(str.capitalize, names):
-    print(n)
+print(names)
+names1 = list(map(str.capitalize, names))
+
+for n in names1:
+    pass
+print(names1)
+    # print(n)
+# print(list(names1))
+# for n in map(str.capitalize, names):
+#     print(n)
 # print(", ".join(list((map(str.capitalize, names)))))
 
 
