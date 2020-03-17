@@ -1,5 +1,27 @@
 # Find out if string is not blank or None
 
+#####################################
+""" Utility Function """
+#####################################
+# Returns the max/min value from args or iterable
+# With a single iterable argument, return its biggest item.
+
+total =125
+current = 15
+my_max = max(total, current)
+my_min = min(total, current)
+
+l = [1,4,7,43,23,89,2]
+s = set(1,4,7,43,23,89,2)
+
+my_max =  max(l)
+my_max =  max(s)
+
+
+#####################################
+""" String Operations """
+#####################################
+
 myString = None
 myString = ""
 
@@ -44,6 +66,14 @@ set = set(s)
 print(sa, set)
 
 #####################################
+# Reverse a String using slice
+
+a = "aseem jain"
+a = a[::-1]
+a = "".join(list(reversed(a)))
+print(a)
+
+#####################################
 # check if char or string contains special chars, is numeric, is a negative number or alphabetic
 
 # String does not have special chars including space
@@ -71,6 +101,12 @@ def is_num(num):
 """ ARRAYS  LISTS """
 #####################################
 
+# Reverse array without sorting using the slice function
+
+arr = [1, 2, 5, 7, 5, 4, 3, 1]
+rev_arr = arr[::-1]
+
+#####################################
 # sort array in place in reverse order
 
 arr = [1, 2, 5, 7, 5, 4, 3, 1]
