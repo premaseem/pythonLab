@@ -96,11 +96,59 @@ def is_num(num):
     except:
         return False
 
+#####################################
+""" Variable assignments """
+#####################################
+# Swap the variable:
+a,b=10,20
+print(a,b)
+a, b = b, a
+print(a,b)
+
+# Ternary assignment:
+max = a if a > b else b
+
+
+# (get_this_if_false, get_this_if_true)[condition]
+age = 20
+can_vote = ("no","yes")[age > 18]
+print("can vote {} ? {}".format(age, can_vote))
+
+#####################################
+""" Printing tricks """
+#####################################
+# print on same line
+print("aseem", end=" ")
+print("jain")
+
+# print a horizontal line by multiplication
+print("-"*40)
+
+# print in aligned way with with expandtabs
+print("{}:  \t  {} ".format(a,b).expandtabs(50))
+print("do it aligned{}:  \t  {} ".format(a, b).expandtabs(50))
 
 #####################################
 """ ARRAYS  LISTS """
 #####################################
+#####################################
+# Figure out if list is not empty
 
+a=[]
+if not a:
+  print("List is empty")
+else:
+  print("do your stuff")
+
+
+#####################################
+# Create new sorted list
+
+a=[5,4,3,7,8,45]
+new_a = sorted(a, reverse=True)
+
+
+#####################################
 # Reverse array without sorting using the slice function
 
 arr = [1, 2, 5, 7, 5, 4, 3, 1]
