@@ -96,6 +96,11 @@ def is_num(num):
     except:
         return False
 
+# String template for interpolation
+from string import Template
+GET_USER_ENDPOINT = Template("$API_ENDPOINT/v2.0/users/$USER_ID")
+final_string = GET_USER_ENDPOINT.substitute(API_ENDPOINT="localhost", USER_ID=786231)
+
 #####################################
 """ Variable assignments """
 #####################################
