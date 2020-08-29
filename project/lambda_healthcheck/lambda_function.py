@@ -25,7 +25,11 @@ def lambda_handler(event=None, context=None):
         client.messages.create(to="+12105109269", from_="+15128776881",
                                body=" ALERT - AWS Twilo proxy down")
 
-    print("Health status is good :-) for AWS Twilio proxy ")
+    print("""Health status is good :-) for AWS Twilio proxy 
+    {}
+    {}
+    {}
+    """.format(url1, url2, url3))
 
 
-lambda_handler()
+# lambda_handler()
