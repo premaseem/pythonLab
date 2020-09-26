@@ -2,7 +2,9 @@
 """
 Break, actually breaks only the current loop, if that loop is nested, it will still continue
 the outer loop as usual.
+Break can only be used inside loops - for / while
 """
+
 for x in range(5):
     print("x=",x)
 
