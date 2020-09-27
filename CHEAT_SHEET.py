@@ -29,11 +29,14 @@ if not myString:
     print("invalid string")
 
 #####################################
-# Remove white space from back and front of string
+# Remove white space or given char  from back and front of string
 
 myString = "    aseem    jain   "
 a = myString.strip(" ")
-print(a)
+
+myString = "0000000this is string example....wow!!!0000000";
+print (str.strip( '0' ))
+
 #####################################
 
 # Split: Return a list of the words in the string, using sep as the delimiter string.
