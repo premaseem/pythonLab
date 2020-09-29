@@ -160,12 +160,14 @@ new_a = sorted(a, reverse=True)
 # Reverse array without sorting using the slice function
 
 arr = [1, 2, 5, 7, 5, 4, 3, 1]
+
+# reverse with slicing and step function, reassign to new obj
 rev_arr = arr[::-1]
 
-#####################################
-# sort array in place in reverse order
+# in place reverse the arr without sorting.
+arr.reverse()
 
-arr = [1, 2, 5, 7, 5, 4, 3, 1]
+# in place reverse the arr with sorting.
 arr.sort(reverse=True)
 
 #####################################
