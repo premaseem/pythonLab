@@ -1,6 +1,7 @@
 """
 dict keys could be string or even tuple but not list
 since tuple is immutable and hashable
+Plz note list, set and dict cannot be used as keys in dict
 """
 
 result = dict()
@@ -16,3 +17,9 @@ for i in l:
     summ = summ + result[i]
 
 print(summ)
+
+
+details = dict()
+# details = {['Audi','BMW'] : ['Price : 2000' , 'Year : 1958']}
+# details[{'Audi','BMW'}] = {'Price : 2000' , 'Year : 1958'}
+# details[{'Audi':1,'BMW':2}] = {'Price' : 2000 , 'Year' : 1958}
