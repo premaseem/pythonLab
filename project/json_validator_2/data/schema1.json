@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "address": {
+      "type": "object",
+      "properties": {
+        "street_address": { "type": "string" },
+        "city":           { "type": "string" },
+        "state":          { "type": "string" }
+      },
+      "required": ["street_address"]
+    }
+  },
+
+  "title": "User",
+  "description": "A user request json",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The unique identifier for a user",
+      "type": "integer"
+    },
+    "name": {
+      "description": "Name of the user",
+      "type": "string"
+    },
+    "contact_number": {
+      "type": "number"
+    },
+    "billing_address": { "$ref": "#/definitions/address"  },
+    "order_numbers": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "number"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "contact_number"
+  ]
+
+
+}
