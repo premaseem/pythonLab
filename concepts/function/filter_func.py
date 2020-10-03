@@ -14,3 +14,11 @@ evens = list(filter(is_even, seq ))
 # odds = list(filter(lambda x : x %2 != 0, seq ))
 print(evens)
 # print(odds)
+
+# inner core implementation of filter function
+def myfilter(func,itr):
+    res = []
+    for i in itr:
+        if(func(i)):
+            res.append(i)
+    return res
