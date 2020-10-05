@@ -35,3 +35,8 @@ print(f"aseem is a {kind} man with {weight} lbs")
 
 # with variables place holders
 print("aseem is a {k} man with {w} pounds weight".format(w=weight,k=kind))
+
+# print emoji or speical chars
+a = '😄'
+b = '🥰'
+print(a+b)
