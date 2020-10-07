@@ -29,11 +29,14 @@ if not myString:
     print("invalid string")
 
 #####################################
-# Remove white space from back and front of string
+# Remove white space or given char  from back and front of string
 
 myString = "    aseem    jain   "
 a = myString.strip(" ")
-print(a)
+
+myString = "0000000this is string example....wow!!!0000000";
+print (str.strip( '0' ))
+
 #####################################
 
 # Split: Return a list of the words in the string, using sep as the delimiter string.
@@ -157,12 +160,14 @@ new_a = sorted(a, reverse=True)
 # Reverse array without sorting using the slice function
 
 arr = [1, 2, 5, 7, 5, 4, 3, 1]
+
+# reverse with slicing and step function, reassign to new obj
 rev_arr = arr[::-1]
 
-#####################################
-# sort array in place in reverse order
+# in place reverse the arr without sorting.
+arr.reverse()
 
-arr = [1, 2, 5, 7, 5, 4, 3, 1]
+# in place reverse the arr with sorting.
 arr.sort(reverse=True)
 
 #####################################

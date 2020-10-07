@@ -41,6 +41,7 @@ for index, color in enumerate(colors):
 
 
 #############################################
+# loop over multiple iterables
 
 colors = ["red", "green", "blue", "purple"]
 ratios = [0.2, 0.3, 0.1, 0.4]
