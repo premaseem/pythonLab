@@ -31,5 +31,4 @@ def lambda_handler(event=None, context=None):
     {}
     """.format(url1, url2, url3))
 
-
 # lambda_handler()

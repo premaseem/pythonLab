@@ -14,6 +14,8 @@ mydict['key3'] = "updated value"
 
 print(mydict)
 
+# get will not raise the key error
 print(mydict.get("key3"))
+
 print(mydict["key3"])
 

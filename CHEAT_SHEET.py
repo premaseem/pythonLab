@@ -72,8 +72,13 @@ print(sa, set)
 # Reverse a String using slice
 
 a = "aseem jain"
+
+# slicing with step function and reassigning back
 a = a[::-1]
+
+# convert in list, reverse it and join back
 a = "".join(list(reversed(a)))
+
 print(a)
 
 #####################################

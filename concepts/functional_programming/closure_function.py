@@ -3,26 +3,38 @@ The closure contains enclosed scope of function.
 with the init variable,
 
 """
-class Multiplier:
-    def __init__(self,n):
-        self.n = n
 
-    def multiply(self, m):
-        return self.n * m
+class Mul:
+    def __init__(self,m):
+        self.m = m 
+    
+    def multiply_with(self, x):
+        print(self.m * x)
+        return self.m * x
+
+m = Mul(2)
+m.multiply_with(100)
 
 
-def make_multiplier_of(n):
-    def multiply(m):
+def multiplier_of(m):
+    inner_scope = m
+    def multiply_with(x):
+        print(inner_scope * x)
+        return inner_scope * x
 
-        return n * m
-    return multiply
+    return multiply_with
 
-table5 = make_multiplier_of(5)
-table2 = make_multiplier_of(2)
-print(table5(10))
-print(table2(10))
 
-obj5 = Multiplier(5)
-obj2 = Multiplier(2)
-print(obj5.multiply(10))
-print(obj5.multiply(7))
+multiplier_obj = multiplier_of(5)
+multiplier_obj(10)
+multiplier_obj(5)
+multiplier_obj(20)
+
+
+def pure_func(x):
+    print("value of x ", x)
+
+
+pure_func(12)
+pure_func(10)
+pure_func(8)

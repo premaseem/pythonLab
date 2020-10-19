@@ -1,4 +1,10 @@
 """
+@author: Aseem Jain
+
+@pip package
+pip install jsonschema
+
+Description:
 Validate the json data against the schema for below validations:
 
 # type of attribute - string / number
@@ -17,16 +23,14 @@ Validate the json data against the schema for below validations:
 # Nested objects with reusable schema
 ## required prop for nested objects
 
-
-
 """
-
 
 
 import json
 import jsonschema
 from jsonschema import validate
 
+# file path for json schema and data file
 SCHEMA='data/schema1.json'
 DATA="data/schema1-data.json"
 

@@ -25,4 +25,5 @@ try :
 except :
     pass
 
+
 print([ x for x in SquareIterator(5).__iter__() ] )

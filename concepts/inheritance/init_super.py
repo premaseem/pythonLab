@@ -16,3 +16,5 @@ class B(A):
 
 o = B()
 print(o)
+
+

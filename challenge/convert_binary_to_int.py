@@ -17,5 +17,18 @@ def sol2(b):
         p += 1
     return f
 
+# reverse string and calculate
+def sol(bs):
+    p = 0
+    n = 0
+    bs = bs[::-1]
+    for ch in bs:
+        l1 = (2 ** p) * int(ch)
+        n += l1
+        p += 1
+        # print(p, l1 , n)
+    return n
+
+assert  242 == sol("11110010")
 assert  242 == sol1("11110010")
 assert  242 == sol2("11110010")
