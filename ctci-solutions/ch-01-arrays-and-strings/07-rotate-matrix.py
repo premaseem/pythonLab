@@ -7,17 +7,17 @@ import unittest
 def rotate_matrix(m):
   n = len(m)
   rotm = [None] * n
-  for row in xrange(n):
+  for row in range(n):
     rotm[row] = [None] * n
-  for row in xrange(n):
-    for col in xrange(n):
+  for row in range(n):
+    for col in range(n):
       rotm[n - col - 1][row] = m[row][col]
   return rotm
 
 def rotate_matrix_in_place(m):
   n = len(m)
-  for col in xrange(n/2):
-    for row in xrange(col, n - col - 1):
+  for col in range(n//2):
+    for row in range(col, n - col - 1):
       temp1 = m[n - col - 1][row]
       m[n - col - 1][row] = m[row][col]
       temp2 = m[n - row - 1][n - col - 1]
