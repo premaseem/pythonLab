@@ -2,6 +2,9 @@
 .idea
 .idea/*
 .idea/libraries
+.DS_Store
+__pycache__
+build/
 */.DS_Store/*
 __pycache__
 .DS_Store/
