@@ -3,10 +3,14 @@ a = [19, 13, 3, 10, 4, 5, 7, 80, 32]
 # size
 s = len(a)
 
-for i in range(s):
-    for j in range(s - i - 1):
-        if a[j] > a[j + 1]:
-            a[j], a[j + 1] = a[j + 1], a[j]
+swapped = True
+while swapped:
+    swapped = False
+    for i in range(s):
+        for j in range(s - i - 1):
+            if a[j] > a[j + 1]:
+                a[j], a[j + 1] = a[j + 1], a[j]
+                swapped = True
 
 print(a)
 
