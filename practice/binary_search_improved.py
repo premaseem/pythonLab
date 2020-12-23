@@ -2,15 +2,10 @@
 # find if element is in the sorted list
 
 lst = [1, 3, 4, 5, 7, 8, 32]
-lst = sorted(lst)
-
-e = len(lst)
-b = 0
-n = -8
 
 
-def binary_search(a, e, l, r):
-    if r <= l:
+def binary_search_recursive(a, e, l, r):
+    if r < l:
         print("not found")
         return -1
 
@@ -23,10 +18,10 @@ def binary_search(a, e, l, r):
         r = m - 1
     else:
         l = m + 1
-    return binary_search(a, e, l, r)
+    return binary_search_recursive(a, e, l, r)
 
 
-print(binary_search(lst, 1, 0, len(lst)))
+print(binary_search_recursive(lst, 1, 0, len(lst)))
 
 
 def binary_search_iterative(a, e, l, r):
