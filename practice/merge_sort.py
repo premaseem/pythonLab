@@ -12,7 +12,6 @@ def merge(l, r):
         if l[li] <= r[ri]:
             arr.append(l[li])
             li += 1
-            continue
         else:
             arr.append(r[ri])
             ri += 1
