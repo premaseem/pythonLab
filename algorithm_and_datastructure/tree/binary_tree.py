@@ -18,6 +18,8 @@ class BinaryTree(object):
             return self.postorder_print(tree.root, "")
         elif traversal_type == "levelorder":
             return self.levelorder_print(tree.root)
+        elif traversal_type == "reverse_levelorder":
+            return self.reverse_levelorder_print(tree.root)
 
         else:
             print("Traversal type " + str(traversal_type) + " is not supported.")
@@ -66,6 +68,45 @@ class BinaryTree(object):
 
         return traversal
 
+    def reverse_levelorder_print(self, start):
+        if start is None:
+            return
+
+        queue = Queue()
+        stack = Stack()
+        queue.enqueue(start)
+
+
+        traversal = ""
+        while len(queue) > 0:
+            node = queue.dequeue()
+
+            stack.push(node)
+
+            if node.right:
+                queue.enqueue(node.right)
+            if node.left:
+                queue.enqueue(node.left)
+
+        while len(stack) > 0:
+            node = stack.pop()
+            traversal += str(node.value) + "-"
+
+        return traversal
+
+    def _height(self,node):
+        if not node:
+            return -1
+
+        lh = self._height(node.left)
+        rh = self._height(node.right)
+
+        return 1 + max(lh,rh)
+
+
+    def get_height(self):
+        return self._height(self.root)
+
 class Queue(object):
     def __init__(self):
         self.items = []
@@ -90,6 +131,36 @@ class Queue(object):
     def size(self):
         return len(self.items)
 
+class Stack(object):
+    def __init__(self):
+        self.items = []
+
+    def __len__(self):
+        return self.size()
+
+    def size(self):
+        return len(self.items)
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        if not self.is_empty():
+            return self.items.pop()
+
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def __str__(self):
+        s = ""
+        for i in range(len(self.items)):
+            s += str(self.items[i].value) + "-"
+        return s
+
 
 # 1-2-4-5-3-6-7-
 # 4-2-5-1-6-3-7
@@ -108,8 +179,15 @@ tree.root.left.left = Node(4)
 tree.root.left.right = Node(5)
 tree.root.right.left = Node(6)
 tree.root.right.right = Node(7)
+tree.root.right.right.right = Node(7)
+tree.root.right.right.right.right = Node(7)
 
 print(tree.print_tree("preorder"))
 print(tree.print_tree("inorder"))
 print(tree.print_tree("postorder"))
 print(tree.print_tree("levelorder"))
+print(tree.print_tree("reverse_levelorder"))
+
+###############################
+# Find height of Tree
+print("height of tree is",tree.get_height())
