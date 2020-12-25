@@ -103,9 +103,39 @@ class BinaryTree(object):
 
         return 1 + max(lh,rh)
 
+    def _size(self,node,s):
+        if not node:
+            return 0
+        s = s+1
+        if node.left:
+            s = self._size(node.left,s)
+        if node.right:
+            s = self._size(node.right,s)
+        return s
+
+    def _size_itr(self,node):
+        if not node:
+            return 0
+
+        s = Stack()
+        s.push(node)
+        total = 0
+        while len(s) > 0 :
+            n = s.pop()
+            total += 1
+            if n.left:
+                s.push(n.left)
+            if n.right:
+                s.push(n.right)
+
+        return total
+
 
     def get_height(self):
         return self._height(self.root)
+
+    def get_size(self):
+        return self._size(self.root,0)
 
 class Queue(object):
     def __init__(self):
@@ -191,3 +221,9 @@ print(tree.print_tree("reverse_levelorder"))
 ###############################
 # Find height of Tree
 print("height of tree is",tree.get_height())
+
+###############################
+# Find size of Tree ( total of all node )
+print("size / total node in tree is",tree.get_size())
+print("size / total node in tree using iter ",tree._size_itr(tree.root))
+
