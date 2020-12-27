@@ -204,6 +204,65 @@ class LinkedList:
         while nn:
             print(nn.v,end="-")
             nn = nn.next
+
+    def remove_dup(self):
+        m = {}
+        c = self.head
+        while c:
+            v = c.v
+            if not m.get(v):
+                m[v] = 1
+            else:
+                p = m.get(v)
+                p += 1
+                m[v] = p
+            c = c.next
+
+        print(m)
+        self.print()
+        prev = self.head
+        curr = self.head.next
+        while curr:
+            v = curr.v
+            p = m.get(v)
+            if p != 1:
+                prev.next = curr.next
+                p -= 1
+                m[v] = p
+            else:
+                prev = curr
+            curr = curr.next
+        # self.print()
+
+    def remove_duplicates(self):
+        cur = self.head
+        prev = None
+        dup_values = dict()
+
+        while cur:
+            if cur.v in dup_values:
+                # Remove node:
+                prev.next = cur.next
+            else:
+                # Have not encountered element before.
+                dup_values[cur.v] = 1
+                prev = cur
+            cur = prev.next
+
+    # 2 pointer approach
+    def get_n_from_last(self,n):
+        front = self.head
+        back = self.head
+        for i in range(n):
+            front = front.next
+
+        while back and front:
+            back = back.next
+            front = front.next
+
+        return back.v
+
+
 # ll = LinkedList()
 # ll.add(10)
 # ll.add(9)
@@ -234,20 +293,40 @@ class LinkedList:
 
 ### Merge 2 linked lists ###
 
-l1 = LinkedList()
-l1.add(40)
-l1.add(30)
-l1.add(20)
-l1.add(10)
-l1.print()
+# l1 = LinkedList()
+# l1.add(40)
+# l1.add(30)
+# l1.add(20)
+# l1.add(10)
+# l1.print()
+#
+# l2 = LinkedList()
+# l2.add(45)
+# l2.add(35)
+# l2.add(25)
+# l2.add(15)
+# l2.print()
+#
+# l1.sort_merge(l1,l2)
 
+### remove duplicates ###
 l2 = LinkedList()
-l2.add(45)
-l2.add(35)
-l2.add(25)
+l2.add(10)
+l2.add(20)
+l2.add(10)
 l2.add(15)
+l2.add(15)
+l2.add(15)
+l2.add(15)
+l2.add(20)
+l2.add(50)
+l2.add(50)
+l2.add(50)
+
+
+l2.print()
+# l2.remove_dup()
+# l2.remove_duplicates()
+print("nth last element : ",l2.get_n_from_last(2))
 l2.print()
 
-l1.sort_merge(l1,l2)
-
-### Merge 2 linked lists ###
