@@ -262,6 +262,56 @@ class LinkedList:
 
         return back.v
 
+    def count(self,data):
+        def count_data(data, n):
+            if not n:
+                return 0
+            if data == n.v:
+                return  1 + count_data(data,n.next)
+            else:
+                return count_data(data,n.next)
+
+        num = count_data(data,self.head)
+        print("count of ", data, "is ", num)
+        return num
+
+    def rotate(self, k):
+        if self.head.v == k:
+            return
+        break_node = None
+        curr = self.head
+        prev = None
+        while curr.next:
+            if curr.v == k:
+                break_node = curr
+                prev.next = None
+            prev = curr
+            curr = curr.next
+
+        curr.next = self.head
+        self.head = break_node
+        # prev.next = None
+        # se
+
+    def is_palendrome(self):
+        c = self.head
+        l = 0
+        n = []
+
+        while c:
+            l += 1
+            n.append(c)
+            c = c.next
+
+        sp = self.head
+
+        for i in range((l//2)):
+            if sp.v != n.pop().v :
+                return False
+            sp = sp.next
+        return True
+
+
 
 # ll = LinkedList()
 # ll.add(10)
@@ -313,20 +363,31 @@ class LinkedList:
 l2 = LinkedList()
 l2.add(10)
 l2.add(20)
-l2.add(10)
+# l2.add(10)
+# l2.add(15)
+# l2.add(15)
+# l2.add(15)
 l2.add(15)
-l2.add(15)
-l2.add(15)
-l2.add(15)
-l2.add(20)
+# l2.add(20)
 l2.add(50)
-l2.add(50)
-l2.add(50)
+l2.add(500)
+l2.add(250)
 
 
 l2.print()
 # l2.remove_dup()
 # l2.remove_duplicates()
 print("nth last element : ",l2.get_n_from_last(2))
+# l2.count(15)
+lp = LinkedList()
+lp.add("r")
+lp.add("a")
+lp.add("d")
+lp.add("a")
+lp.add("r")
+print("is palendrome ",lp.is_palendrome())
+
+l2.rotate(250)
 l2.print()
+
 
