@@ -311,6 +311,59 @@ class LinkedList:
             sp = sp.next
         return True
 
+    def tail_to_head(self):
+        c = self.head
+        p = None
+        while c.next:
+            p = c
+            c = c.next
+        p.next = None
+        c.next = self.head
+        self.head = c
+        print("moved head ")
+        self.print()
+
+    def sum(self,l1,l2):
+
+        p = l1.head
+        q = l2.head
+        ans = n(0)
+        ans_head = ans
+        c=0
+        d=0
+        while p and q:
+            s = p.v + q.v + c
+            c = 0
+            if s > 9 :
+                d = s % 10
+                c = 1
+            else:
+                d =s
+            ans.next = n(d)
+            ans = ans.next
+            p = p.next
+            q = q.next
+
+        while p:
+            ans.next = n(p.v + c)
+            c = 0
+            p = p.next
+            ans = ans.next
+        while q:
+            ans.next = n(q.v + c)
+            c=0
+            q = q.next
+            ans = ans.next
+
+
+        print("sum of", l1.print())
+        print("sum of", l2.print())
+        while ans_head:
+            print(ans_head.v)
+            ans_head = ans_head.next
+
+
+
 
 
 # ll = LinkedList()
@@ -386,8 +439,25 @@ lp.add("d")
 lp.add("a")
 lp.add("r")
 print("is palendrome ",lp.is_palendrome())
-
+lp.tail_to_head()
 l2.rotate(250)
 l2.print()
+
+n1=  LinkedList()
+n1.add(5)
+n1.add(6)
+n1.add(3)
+
+n2=LinkedList()
+n2.add(9)
+n2.add(9)
+# n2.add(2)
+# n2.add(3)
+
+n3=LinkedList()
+n3.add(9)
+n3.add(9)
+n3.add(9)
+n1.sum(n3, n2)
 
 
