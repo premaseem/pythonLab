@@ -90,6 +90,21 @@ class DLL:
                 return
             c = c.next
 
+    def reverse(self):
+        h = self.head
+        t = self.tail
+
+        c = h
+        while c:
+            temp = c.next
+            c.next, c.prev = c.prev, c.next
+            c = temp
+        # if c:
+        #     c.next = c.prev
+        self.tail = h
+        self.head = t
+
+
 
 
             
@@ -123,7 +138,8 @@ dll.append(3)
 
 # dll.add_after(3,"a")
 # dll.add_before(1,"z")
-dll.delete(2)
+# dll.delete(2)
+dll.reverse()
 dll.print()
 dll.print_rev()
 
