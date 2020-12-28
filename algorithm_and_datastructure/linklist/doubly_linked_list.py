@@ -70,6 +70,33 @@ class DLL:
             c = c.prev
 
         
+    def delete(self, data):
+        if self.head.data == data: 
+            c = self.head.next
+            if c:
+                c.prev = None
+            self.head = c
+        if self.tail.data == data:
+            c = self.tail.prev
+            if c:
+                c.next = None
+            self.tail = c
+
+        c = self.head
+        while c.next:
+            if c.data == data:
+                c.prev.next = c.next
+                c.next.prev = c.prev
+                return
+            c = c.next
+
+
+
+            
+                
+        
+            
+            
                 
                 
             
@@ -95,7 +122,8 @@ dll.append(2)
 dll.append(3)
 
 # dll.add_after(3,"a")
-dll.add_before(1,"z")
+# dll.add_before(1,"z")
+dll.delete(2)
 dll.print()
 dll.print_rev()
 
