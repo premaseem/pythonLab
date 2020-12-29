@@ -2,6 +2,7 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+        self.visited = False
 
 class LinkedList:
 
@@ -33,12 +34,12 @@ class LinkedList:
     def display(self):
         if not self.head:
             return
-        print()
+        # print()
         c = self.head
         while c:
             print(c.data, " - ",end="")
             c = c.next
-        print()
+        # print()
 
     def remove(self,k):
         if not self.head:
@@ -101,7 +102,7 @@ class Stack:
 ll = LinkedList()
 
 # print(ll.is_empty())
-ll.add(2)
-ll.add(3)
-ll.remove(2)
-ll.display()
+# ll.add(2)
+# ll.add(3)
+# ll.remove(2)
+# ll.display()
