@@ -56,9 +56,36 @@ class Graph:
                 result += result_new
         return result
 
+    def dfs_traversal_helper(self, g, source, visited):
+        result = ""
+        stack = gh.Stack()
+        stack.push(source)
+        visited[source] = True # Mark as visited
 
+        # Traverse while queue is not empty
+        while len(stack) > 0 :
+            # Dequeue a vertex/node from queue and add it to result
+            current_node = stack.pop()
+            result += str(current_node)
 
+            nn = g.arr[current_node].head
+            while nn is not None:
+                if visited[nn.data] is False:
+                    stack.push(nn.data)
+                    # result += nn.data
+                    visited[nn.data] = True
+                nn = nn.next
+        return result, visited
 
+    def dfs_traversal(self,g,source):
+        visited = [False] * len(g.arr)
+        result, visited = self.bfs_traversal_helper(g,source,visited)
+
+        for i,e in enumerate(visited):
+            if not e:
+                result_new, visited = self.bfs_traversal_helper(g,i,visited)
+                result += result_new
+        return result
 
 
 

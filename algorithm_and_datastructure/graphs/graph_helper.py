@@ -29,7 +29,10 @@ class LinkedList:
         c = self.head
         while c.next:
             c = c.next
-        c.next = nn
+        c.next = self.head
+        self.head = nn
+
+
 
     def display(self):
         if not self.head:
