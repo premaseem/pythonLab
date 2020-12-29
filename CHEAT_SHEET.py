@@ -121,6 +121,9 @@ print(a,b)
 # Ternary assignment:
 max = a if a > b else b
 
+# swap variable without temp
+a, b = b, a
+
 
 # (get_this_if_false, get_this_if_true)[condition]
 age = 20
@@ -152,6 +155,38 @@ if not a:
   print("List is empty")
 else:
   print("do your stuff")
+
+#####################################
+# combining or extending another list
+# Will add all elements of b in a maintaining the order.
+
+a = [1,2,3,4]
+b = [9,6,5,4]
+a.extend(b)
+
+# creating 3rd array by adding 2 arrays
+c = a + b
+
+# a = [1, 2, 3, 4, 9, 6, 5, 4]
+#####################################
+
+# Create type safe or homogenious lists, will only add integer type
+
+import array
+
+integer_array = array.array('i', [10, 11, 12, 12, 13])
+
+# Find index of value
+vowels = ['a', 'e', 'i', 'o', 'i', 'u']
+
+# index of 'e' in vowels
+index = vowels.index('e')
+print('The index of e:', index)
+
+#####################################
+
+# Generate list with similar items, create list with 5 false elements
+visited = [False] * 5
 
 
 #####################################
