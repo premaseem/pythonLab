@@ -103,7 +103,30 @@ class DLL:
         #     c.next = c.prev
         self.tail = h
         self.head = t
+        
+    def remove_dup(self):
+        s = set()
+        c = self.head
+        while c:
+            if c.data in s:
+                self.delete(c.data)
+            else:
+                s.add(c.data)
+            c = c.next
 
+    def pairup(self,sol):
+        p = self.head
+        ans = []
+        while p:
+            q = p.next
+            while q:
+                if sol == p.data + q.data:
+                    ans.append((p.data, q.data))
+
+                q = q.next
+            p = p.next
+
+        print(ans)
 
 
 
@@ -135,13 +158,19 @@ dll = DLL()
 dll.append(1)
 dll.append(2)
 dll.append(3)
+dll.append(4)
+dll.append(5)
 
 # dll.add_after(3,"a")
 # dll.add_before(1,"z")
 # dll.delete(2)
-dll.reverse()
+# dll.reverse()
+
 dll.print()
+# dll.remove_dup()
 dll.print_rev()
+dll.pairup(5)
+
 
 
 
