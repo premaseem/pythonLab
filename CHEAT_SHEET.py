@@ -167,6 +167,22 @@ for i in a:
     print(a)
 
 #####################################
+# List comprehension : convert num list into string list
+
+arr = [3,4,5,4,3,2]
+arrs = [str(x) for x in arr]
+
+# normal
+l = [x for x in range(100)]
+
+# if
+lc_if = [x+1 if x >= 45 else x+5 for x in l]
+
+# if / else
+lc_if_else = [x+1 if x >= 45 else x+5 for x in l]
+
+
+#####################################
 # Removing item from list
 list = [2,3,4,0,1,8]
 
@@ -262,20 +278,6 @@ custom_array.sort(key=lambda x: x.fn, reverse=True)
 print(custom_array)
 custom_array.sort(key=lambda x: x.ln, reverse=True)
 print(custom_array)
-#####################################
-# List comprehension : convert num list into string list
-
-arr = [3,4,5,4,3,2]
-arrs = [str(x) for x in arr]
-
-# normal
-l = [x for x in range(100)]
-
-# if
-lc_if = [x+1 if x >= 45 else x+5 for x in l]
-
-# if / else
-lc_if_else = [x+1 if x >= 45 else x+5 for x in l]
 
 #####################################
 """ MATRIX  """
