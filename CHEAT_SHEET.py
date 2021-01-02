@@ -157,6 +157,39 @@ else:
   print("do your stuff")
 
 #####################################
+# looping over empty list
+
+# while and for loop evaluate to false if list is empty or none and does throw error
+while a:
+    print(a)
+
+for i in a:
+    print(a)
+
+#####################################
+# Removing item from list
+list = [2,3,4,0,1,8]
+
+# Remove an item by value: remove()
+list.remove(0)
+
+# Remove an item by index and get its value (defaults to last or -1): pop()
+list.pop()
+list.pop(2)
+
+# Remove items by index or slice: del
+del list[2]
+del list [2:4]
+
+# Remove items that meet the condition: List comprehensions
+list = [e for e in list if e % 2 == 0 ]
+
+
+# Remove all items: clear()
+l.clear()
+
+
+#####################################
 # combining or extending another list
 # Will add all elements of b in a maintaining the order.
 
@@ -234,7 +267,15 @@ print(custom_array)
 
 arr = [3,4,5,4,3,2]
 arrs = [str(x) for x in arr]
-print(arr)
+
+# normal
+l = [x for x in range(100)]
+
+# if
+lc_if = [x+1 if x >= 45 else x+5 for x in l]
+
+# if / else
+lc_if_else = [x+1 if x >= 45 else x+5 for x in l]
 
 #####################################
 """ MATRIX  """
