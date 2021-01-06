@@ -295,3 +295,67 @@ for e in input:
     # ['N', 'N', 'N', 'Y']
 
 #####################################
+""" SET operation  """
+# set  has no duplicates.
+# set is unordered.
+# elemets must be immutable in set
+# It is also built in the same way as dict, where key and value is same.
+#####################################
+# create set in 2 ways, argument to set() is an iterable
+set1 = set()
+set2 = {3,6,9,12,15}
+
+# add element
+set1.add(2)
+set1.add(2)
+set1.add(4)
+set1.add(6)
+set1.add(8)
+set1.add(10)
+
+# search element - key in container
+if 2 in set1:
+    print("found key")
+
+# remove element
+set1.remove(8)
+
+# remove element without error if element not found
+set1.discard(8)
+
+# extends or add elements in set, argument is iterable
+set1.update([3,4,], [7,8])
+
+# Intersection - common elements
+set1 & set2
+set1.intersection(set2)
+
+# Union - combined
+set1 | set2
+set1.union(set2)
+
+# is subset
+set1 <= set2
+set1.issubset(set2)
+
+# is superset
+set1 >= set2
+set1.issuperset(set2)
+
+# sets equality operation
+set1 == set2
+
+# Delta - difference or uncommon elements
+set1 - set2 # elements of set1 - set2
+set2 - set1 # elements of set1 - set2
+set1.difference(set2)
+
+# Immutable set or Frozen set, cannot add or updated / ENUM
+froze_set = frozenset([1,2,3,])
+
+#####################################
+""" MAP or DICTIONARY   """
+# set  has no duplicates.
+# set is unordered.
+# It is also built in the same way as dict, where key and value is same.
+#####################################
