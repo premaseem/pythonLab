@@ -294,6 +294,7 @@ for e in input:
     # ['N', 'Y', 'Y', 'N']
     # ['N', 'N', 'N', 'Y']
 
+
 #####################################
 """ SET operation  """
 # set  has no duplicates.
@@ -301,6 +302,7 @@ for e in input:
 # elemets must be immutable in set
 # It is also built in the same way as dict, where key and value is same.
 #####################################
+
 # create set in 2 ways, argument to set() is an iterable
 set1 = set()
 set2 = {3,6,9,12,15}
@@ -353,9 +355,53 @@ set1.difference(set2)
 # Immutable set or Frozen set, cannot add or updated / ENUM
 froze_set = frozenset([1,2,3,])
 
+
 #####################################
 """ MAP or DICTIONARY   """
 # set  has no duplicates.
 # set is unordered.
 # It is also built in the same way as dict, where key and value is same.
 #####################################
+
+# creating map
+m = {"a":1}
+
+# adding
+m["key"] = "value"
+
+# Retrieve value by key, through error if key not found
+m["key"]
+
+# Returns None if key does not exists
+m.get("key")
+
+# deleting key
+m.pop("key")
+del m["key"]
+
+# Searching for key
+if "key" in m:
+    print("found")
+
+# iterating keys, by default m refers to m.keys()
+for k in m: print(k)
+for k in m.keys(): print(k)
+
+# iterate values
+for k in m.values(): print(k)
+
+# iterate items as key and value
+for k in m.items(): print(k)
+
+# iterate and unpack keys and values
+for k,v in m.items(): print(k,v)
+
+# update map , update existing keys and adds new keys
+d1 = {'a': 10, 'b': 20, 'c': 30}
+d1.update(b=200, d=400)
+# d1 => {'a': 10, 'b': 200, 'c': 30, 'd': 400}
+
+# Merge dictionary with update
+d1 = {'a': 10, 'b': 20, 'c': 30}
+d2 = {'b': 200, 'd': 400}
+# d1 => {'a': 10, 'b': 200, 'c': 30, 'd': 400}
