@@ -1,49 +1,21 @@
-# Is Unique: Implement an algorithm to determine if a string has all unique characters.
-# What if you cannot use additional data structures?
+class MyRange:
+    def __init__(self, n):
+        self.n = n
 
-t1 = "aseem"
-t2 = "jain"
+    def __iter__(self):
+        return self
 
-# Brute Force
-# def sol(d):
-#     for i in range(len(d)):
-#         for j in range(i+1, len(d)):
-#             if d[i] == d[j]:
-#                 return 0
+    def next(self):
+        myArray = []
+        for i in range(self.n): # from n to 0
+            if i == 0 or i == 1:
+                myArray.append(i) # adds the even number to the list
+            else:
+                myArray.append(myArray[i-2] + myArray[i-1])
+        return myArray
 
-# def sol(d):
-#     buffer = {}
-#     for c in d:
-#         if buffer.get(c):
-#             return False
-#         else:
-#             buffer[c] = True
-#     return True
-
-# def sol(d):
-#     buffer = set()
-#     for c in d:
-#         if c in buffer:
-#             return False
-#         else:
-#             buffer.add(c)
-#     return True
-
-# def sol(d):
-#     for c in d:
-#         if d.count(c) > 1:
-#             return False
-#     return True
-
-def sol(d):
-    return len(d) == len(set(d))
-
-# Slicing
-# def sol(d):
-#     for i,c in enumerate(d):
-#         if c in d[i+1:]:
-#             return False
-#     return True
-
-assert sol(t1) is not None or False
-assert sol(t2) is None or True
+myrange = MyRange(8)
+print(myrange.next())
+print(myrange.next())
+for e in myrange:
+    print(e)

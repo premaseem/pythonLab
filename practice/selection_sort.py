@@ -8,8 +8,8 @@ for i in range(s):
     lowest_index = i
     for j in range(i+1,s):
         if a[j] < a[lowest_index]:
-            # lowest_index = j
-            a[j], a[lowest_index] = a[lowest_index],a[j]
+            lowest_index = j
+            # a[j], a[lowest_index] = a[lowest_index],a[j]
     print("pass ", i , a )
     # swap
     a[i], a[lowest_index] = a[lowest_index],a[i]

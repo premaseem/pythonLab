@@ -1,7 +1,6 @@
 import random
 import uuid
-# import algorithm.hashing.my_hash_table.MyHashTable as mh
-import my_hash_table as mh
+import algorithm_and_datastructure.hashing.my_hash_table as mh
 
 days = ["Monday", "Tuesday", "Wednesday", "Sunday"]
 domains = ["gmail.com", "yahoo.com", "sexy.com"]
@@ -32,7 +31,7 @@ def read_and_load(f):
         for line in lines:
             k,v = line.split(":")
             print("setting kv", k,v)
-            o.set_value(k,v)
+            o.set_value(k,v,"abc","xyz")
     print(o.get_value("prem@gmail.com"))
 
 

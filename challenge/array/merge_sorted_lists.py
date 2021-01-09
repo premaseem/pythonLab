@@ -2,7 +2,7 @@
 
 
 def merge_lists(l1,l2):
-    sl = [0]
+    sl = []
     while l1 and l2:
         if l1[0] <= l2[0]:
             sl.append(l1.pop(0))
@@ -12,7 +12,7 @@ def merge_lists(l1,l2):
         sl.extend(l1)
     if l2:
         sl.extend(l2)
-    return sl[1:]
+    return sl
 
 
 l1 = [2,4,6,8]

@@ -9,7 +9,7 @@ g.add_edge(1, 3)
 g.add_edge(2, 3)
 # g.display()
 
-print(g.bfs(g,0))
+print("bfs traverse", g.bfs(g,0))
 #####################
 
 g = gf.Graph(7)

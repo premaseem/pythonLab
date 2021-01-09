@@ -1,5 +1,5 @@
 def recure(var):
-    if len(var == 0):
+    if len(var) == 0:
         return ""
     return var[-1] + recure(var[:-1])
 

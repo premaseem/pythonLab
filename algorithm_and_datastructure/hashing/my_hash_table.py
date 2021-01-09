@@ -56,4 +56,4 @@ if __name__ == "__main__":
     print(o.get_value("prem@gmail.com"))
     print(o.delete_value("prem@gmail.com"))
     print("get after delete")
-    print(o.get_value("prem@gmail.com"))
+    print(o.get_value("sony@gmail.com"))
