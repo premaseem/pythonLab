@@ -1,4 +1,7 @@
-# python code to demonstrate working of reduce() 
+""":arg
+Any reduce function with takes 2 input and returns one can be used in reduce func.
+"""
+# python code to demonstrate working of reduce()
 
 # importing functools for reduce() 
 import functools
