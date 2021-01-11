@@ -159,12 +159,37 @@ else:
 #####################################
 # looping over empty list
 
-# while and for loop evaluate to false if list is empty or none and does throw error
-while a:
-    print(a)
+lst = [1,2,3,4]
+lst2 = [1,2,3,4,6]
 
-for i in a:
-    print(a)
+# Old school (direct access instead of iterating)
+for i in range(0, len(lst), 1):
+    print(lst[i])
+
+# Iteration to get value without index
+for ele in lst:
+    print(ele)
+
+# Iteration with index and value both, can start with 1
+for index, ele in enumerate(lst, start=1):
+    print(index, ele)
+
+# Iterating multiple lists or enumerable objects together, runs to shorted of 2
+for e1,e2 in zip(lst,lst2):
+    print(e1,e2)
+
+# while and for loop evaluate to false if list is empty or none and does throw error
+itr = iter(lst)
+cnt = 0
+while cnt < len(lst):
+    cnt += 1
+    try :
+        print(next(itr))
+    except StopIteration:
+        pass
+else:
+    print("print this if loop is not broken")
+
 
 #####################################
 # List comprehension : convert num list into string list
@@ -377,6 +402,7 @@ m.get("key")
 
 # Return value if key presents, set default if key is not present.
 m.setdefault("key", "default")
+m.setdefault("k", [])
 
 # deleting key
 m.pop("key")
