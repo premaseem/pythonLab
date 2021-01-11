@@ -375,6 +375,9 @@ m["key"]
 # Returns None if key does not exists
 m.get("key")
 
+# Return value if key presents, set default if key is not present.
+m.setdefault("key", "default")
+
 # deleting key
 m.pop("key")
 del m["key"]
