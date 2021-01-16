@@ -201,7 +201,7 @@ arrs = [str(x) for x in arr]
 l = [x for x in range(100)]
 
 # if
-lc_if = [x+1 if x >= 45 else x+5 for x in l]
+lc_if = [x for x in l if x >= 45]
 
 # if / else
 lc_if_else = [x+1 if x >= 45 else x+5 for x in l]
@@ -286,22 +286,27 @@ arr.sort(reverse=True)
 
 #####################################
 
-# sort custom object by key
+# sort custom object
+# 1. Static way : class implementing < less then __lt__(self,other)
+# 2. Dynamic way is by providing lambda func with key.
+
 class Custom():
-    def __init__(self,fn,ln):
-        self.fn = fn
-        self.ln = ln
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
     def __repr__(self):
-        return self.fn + " " + self.ln
+        return self.name + " " + self.age
+    def __lt__(self, other):
+        return self.age < other.age
 
 # obj = Custom("aseem", "jain")
 custom_array = [Custom("aseem", "jain"),Custom("wseem", "jain"),Custom("nehal", "zain") ]
 # custom_array=[]
 print(custom_array)
-
-custom_array.sort(key=lambda x: x.fn, reverse=True)
+custom_array.sort()
+custom_array.sort(key=lambda x: x.name, reverse=True)
 print(custom_array)
-custom_array.sort(key=lambda x: x.ln, reverse=True)
+custom_array.sort(key=lambda x: x.age, reverse=True)
 print(custom_array)
 
 #####################################
