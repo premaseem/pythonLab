@@ -8,7 +8,6 @@ This means that the right-most elements will appear at the left-most position in
 """
 i = [10,20,30,40,50,60,70]
 n = 3
-e = [30,40,50,10,20]
 e = [50,60,70,10,20,30,40]
 
 def right_rotate(lst, k):
