@@ -12,7 +12,7 @@ my_max = max(total, current)
 my_min = min(total, current)
 
 l = [1,4,7,43,23,89,2]
-s = set(1,4,7,43,23,89,2)
+s = set([1,4,7,43,23,89,2])
 
 my_max =  max(l)
 my_max =  max(s)
@@ -52,7 +52,7 @@ print(stri)
 # Count: Return the number of non-overlapping occurrences of substring
 print("aseem".count("e"))
 #####################################
-# find char in word, can also specify length range returns -1 if not find, else index
+# find char in word, can also specify length range returns -1 if not found, else index
 
 "aseem".find("s")
 print("aseem jain".find("m", 0, 5))
@@ -269,6 +269,11 @@ visited = [False] * 5
 a=[5,4,3,7,8,45]
 new_a = sorted(a, reverse=True)
 
+#####################################
+# Compare 2 lists are equal
+a=[5,4,3,7,8,45]
+b=[4,5,3,7,45,8]
+sorted(a) == sorted(b)
 
 #####################################
 # Reverse array without sorting using the slice function
@@ -308,6 +313,36 @@ custom_array.sort(key=lambda x: x.name, reverse=True)
 print(custom_array)
 custom_array.sort(key=lambda x: x.age, reverse=True)
 print(custom_array)
+
+#####################################
+""" Dictionaries or Maps"""
+#####################################
+# Define maps
+m1 = {}
+m2 = {}
+
+# add or update
+m1["k"] = "value"
+
+# get
+v = m1.get("k") # None is return if key does not exists
+v = m1["k"] # key error is thrown if key does not exists
+
+# delete or remove value
+del m1["k"]
+
+# iterate
+for k in m1:
+    print(k)
+
+for v in m1.values():
+    print(v)
+
+for k,v in m1.items():
+    print(k,v)
+
+# compare maps
+m1 == m2
 
 #####################################
 """ MATRIX  """

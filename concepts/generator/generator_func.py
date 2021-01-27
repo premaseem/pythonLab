@@ -1,7 +1,8 @@
 # when fun has yield instead of return it becomes generator function and returns iterator
-
+import time
 def num_series(n):
     for i in range(1,n+1):
+        time.sleep(1)
         yield i
 
 

@@ -10,7 +10,7 @@ con = ldap.initialize('ldap://127.0.0.1:10636')
 # If we want to be associated to an account
 # you can log by binding your account details to your connection
 
-con.simple_bind_s("cn=admin,ou=internal,dc=rackspace,dc=com", "qwerty")
+con.simple_bind_s("cn=admin,ou=internal,dc=google,dc=com", "qwerty")
 
 ########## performing a simple ldap query ####################################
 
