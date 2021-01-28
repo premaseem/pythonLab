@@ -3,6 +3,10 @@ cd to app file ( ie cd weatherapp/src)
 Run command to run fast api server
 > uvicorn app:app --reload
 
+### Interactive api docs
+http://127.0.0.1:8000/docs
+
+
 ### Test with curl call 
 
 curl -L -X POST 'http://127.0.0.1:8000/weather?serviceId=1' \

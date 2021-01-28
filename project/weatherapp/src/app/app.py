@@ -1,26 +1,61 @@
 from typing import Optional
 
-from fastapi import FastAPI
+from fastapi import FastAPI, status, Form,UploadFile, File
+from typing import List
 from pydantic import BaseModel
 from starlette.responses import JSONResponse
+from fastapi.responses import HTMLResponse
+from weather_service import WeatherService
+
+app = FastAPI()
 
 
-class Item(BaseModel):
+@app.post("/login/")
+async def login(username: str = Form(...)):
+    return {"username": username}
+
+@app.post("/files/")
+async def create_files(files: List[bytes] = File(...)):
+    return {"file_sizes": [len(file) for file in files]}
+
+
+@app.post("/uploadfiles/")
+async def create_upload_files(files: List[UploadFile] = File(...)):
+    return {"filenames": [file.filename for file in files]}
+
+
+@app.get("/")
+async def main():
+    content = """
+<body>
+<form action="/files/" enctype="multipart/form-data" method="post">
+<input name="files" type="file" multiple>
+<input type="submit">
+</form>
+<form action="/uploadfiles/" enctype="multipart/form-data" method="post">
+<input name="files" type="file" multiple>
+<input type="submit">
+</form>
+</body>
+    """
+    return HTMLResponse(content=content)
+
+class WeatherRequestModel(BaseModel):
     lat: float
     lon: float
     unit: Optional[str] = "F"
 
-class RespModel(BaseModel):
+class WeatherResponseModel(BaseModel):
     currentTemp: float
     highTemp: float
     lowTemp: float
     unit : str
 
 
-app = FastAPI()
-from weather_service import WeatherService
-@app.post("/weather",response_model=RespModel)
-async def create_item(item: Item, serviceId: Optional[int] = 1):
+
+
+@app.post("/weather", response_model=WeatherResponseModel, status_code=status.HTTP_200_OK)
+async def create_item(item: WeatherRequestModel, serviceId: Optional[int] = 1):
 
     # grab request payload params
     item_dict = item.dict()
