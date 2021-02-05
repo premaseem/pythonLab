@@ -35,3 +35,10 @@ print(Mood.HAPPY.favorite_mood())
 
 for m in Mood:
     print(m)
+
+print(f"get enum by name")
+print(Mood["FUNKY"])
+print(type(Mood["FUNKY"]))
+
+print(f"get enum by value")
+print(Mood(100))

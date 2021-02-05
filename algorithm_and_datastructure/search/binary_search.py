@@ -24,7 +24,9 @@ def binary_search_recursive(a, e, l, r):
 print(binary_search_recursive(lst, 1, 0, len(lst)))
 
 
-def binary_search_iterative(a, e, l, r):
+def binary_search_iterative(a, e):
+    l=0
+    r=len(a)
     while l <= r:
         m = (l + r) // 2
         if e == a[m]:
@@ -38,7 +40,7 @@ def binary_search_iterative(a, e, l, r):
         return -1
 
 
-print(binary_search_iterative(lst, 5, 0, len(lst)))
+print(binary_search_iterative(lst, 5))
 
 
 # Search without start / end index and copy of list using slice, without returning index

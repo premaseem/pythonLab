@@ -70,4 +70,4 @@ def sol4(lst):
 
 
 # assert e == sol1(i)
-assert e == sol4(i)
+assert e == sol3(i)

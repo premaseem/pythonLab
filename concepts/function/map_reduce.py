@@ -37,7 +37,7 @@ def myreduce(func,x):
     return aggr
 
 def add(x,y):return x+y
-def mul(x,y):return x+y
+def mul(x,y):return x*y
 
 r3 = myreduce(add,l)
 print(r3)
