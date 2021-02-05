@@ -18,13 +18,17 @@ def greet_ge():
 def greet_gn():
     print("good night ")
 
+def greet_gnoon():
+    print("good after noon ")
+
 greet_table = {
     "gm" : greet_gm,
     "ge" : greet_ge,
     "gn" : greet_gn,
+    "gan" : greet_gnoon
 }
 
 
 i = input("what time of day is it?")
-greet_table.get(i)()
+greet_table.get(i.strip())()
 
