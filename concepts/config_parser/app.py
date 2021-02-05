@@ -11,6 +11,20 @@ print(cfg.creds.get("pass"))
 print(cfg.creds.get("pass34"))
 
 
+import json
+import configparser
+
+# read a config file
+p = configparser.ConfigParser()
+p.read("test.ini")
+print(p.get("Manager","Email"))
+
+# read a list from config
+option_values = p.get("config", "a_list")
+option_value_list = json.loads(option_values)
+
+print(option_value_list)
+
 ### Write to a config file
 
 import configparser
@@ -27,7 +41,4 @@ fp=open('test.cfg','w')
 parser.write(fp)
 fp.close()
 
-# read a config file
-p = configparser.ConfigParser()
-p.read("test.cfg")
-print(p.get("Manager","Email"))
+
