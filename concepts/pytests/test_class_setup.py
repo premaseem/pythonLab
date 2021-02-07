@@ -18,7 +18,10 @@ def teardown_class(cls):
     """
     print("tear down")
 
-def test_my():
+def test_my1():
     print("pass")
 
-test_my()
+def test_my2():
+    print("pass")
+
+# test_my()
