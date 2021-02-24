@@ -29,12 +29,18 @@ def sol3(nums):
         ans.append(nums[i]+ans[i-1])
     return ans
 
-def sold4(nums):
+def sol4(nums):
     for i in range(1, len(nums)):
         nums[i] = nums[i-1] + nums[i]
     return nums
 
+def sol5(nums):
+    nums[2]="aseem"
+
 assert Output == sol1(nums)
 assert Output == sol2(nums)
 assert Output == sol3(nums)
-assert Output == sol3(nums)
+print(nums)
+sol5(nums)
+print(nums)
+# assert Output == sol4(nums)

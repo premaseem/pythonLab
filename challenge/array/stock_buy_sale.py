@@ -30,3 +30,25 @@ def buy_and_sell_once(prices):
     return max_profit
 
 print(buy_and_sell_once(A))
+
+
+A = [310, 315, 275, 295, 260, 270, 290, 230, 255, 250]
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+# Faster then above
+def buy_and_sell_once1(prices):
+
+    # reverse the array, so that sale price is highest then buying
+    prices = prices[::-1]
+
+    high_price = prices[0]
+    profit = 0
+
+    for i in range(1,len(prices)):
+        high_price = max(high_price, prices[i])
+        profit = max(profit, high_price - prices[i])
+
+    return profit
+
+
