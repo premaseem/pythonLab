@@ -8,7 +8,7 @@
 # input: [[5, ON], [7, OFF], [30, ON], [31, OFF], [36, ON]]
 # output: [[5,7], [30,31]]
 
-def analyze(lst):
+def sol(lst):
     r = []
     t = []
     if lst[0][1] == "OFF":
@@ -24,13 +24,24 @@ def analyze(lst):
         t = []
     return r
 
+def sol2(lst):
+    r = []
+    t = [0] if lst[0][1] == "OFF" else []
+
+    for event in lst:
+        t.append(event[0])
+        if event[1] == "OFF":
+            r.append(t)
+            t = []
+
+    return r
 
 inputOff = [[3, "OFF"], [5, "ON"], [7, "OFF"], [30, "ON"], [31, "OFF"], [36, "ON"]]
 inputon = [[5, "ON"], [7, "OFF"], [30, "ON"], [31, "OFF"], [36, "ON"]]
 
 expected = [[5,7], [30,31]]
 
-assert expected == analyze(inputon)
+assert expected == sol(inputon)
 
 
 
