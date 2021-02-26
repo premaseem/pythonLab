@@ -492,6 +492,22 @@ d2 = {'b': 200, 'd': 400}
 
 # d1 => {'a': 10, 'b': 200, 'c': 30, 'd': 400}
 
+#####################################
+""" Data driven Testing   """
+#####################################
+
+def sol(n):
+    return n*2
+
+test_data = [
+    (2 ,4),
+    (4 ,8),
+]
+
+for given, expected in test_data:
+    assert expected == sol(given)
+    print(f"Test passed for: given {given} and expected = {expected}")
+
 
 #####################################
 """ pytest Testing    """
