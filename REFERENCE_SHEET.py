@@ -128,7 +128,12 @@ a, b = b, a
 # (get_this_if_false, get_this_if_true)[condition]
 age = 20
 can_vote = ("no", "yes")[age > 18]
+can_vote = "yes" if age > 18 else "no"
 print("can vote {} ? {}".format(age, can_vote))
+
+# toggle or flip flop or ternary operator
+e = "enter"
+toggle = "flop" if e == "flip" else "flip"
 
 #####################################
 """ Printing tricks """
