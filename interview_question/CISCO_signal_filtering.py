@@ -40,12 +40,14 @@ def sol3(lst):
     """ fix the input if not expected """
     r = []
     e = []
-    if lst[0][1] != "ON":
-        lst.insert(0,[0,"ON"])
+    exp = 1
+    if lst[0][1] == "OFF":
+        exp = 0
+        e = [0]
 
     for i, (tm,st) in enumerate(lst):
         e.append(tm)
-        if i % 2 == 1:
+        if i % 2 == exp:
             r.append(e)
             e = []
     return r

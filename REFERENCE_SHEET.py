@@ -462,7 +462,10 @@ m.get("key")
 
 # Return value if key presents, set default if key is not present.
 m.setdefault("key", "default")
-m.setdefault("k", [])
+
+d = {}
+lst = d.setdefault("key",[])
+lst.append(0)
 
 # deleting key
 m.pop("key")
