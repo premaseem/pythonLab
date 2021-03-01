@@ -496,9 +496,22 @@ d1.update(b=200, d=400)
 # Merge dictionary with update
 d1 = {'a': 10, 'b': 20, 'c': 30}
 d2 = {'b': 200, 'd': 400}
-
+d1.update(d2)
 
 # d1 => {'a': 10, 'b': 200, 'c': 30, 'd': 400}
+
+#### Sorting dictionary or map by Values ########
+# convert dict tuples and sort them by key or value using lambda
+s_k_t = sorted(m.items(),key=lambda i:i[0])
+s_v_t = sorted(m.items(),key=lambda i:i[1])
+
+# converted sorted tuple into new map sorted by
+s_k_m = {}
+for k,v in s_k_t: s_k_m[k]=v
+
+s_v_m = {}
+for k,v in s_v_t: s_v_m[k]=v
+
 
 #####################################
 """ Data driven Testing   """
