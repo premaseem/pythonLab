@@ -81,6 +81,15 @@ a = "".join(list(reversed(a)))
 print(a)
 
 #####################################
+# convert num to char and char to number
+ord('a')
+# >>> 97
+chr(97)
+# >>> 'a'
+chr(ord('a') + 3)
+# >>> 'd'
+
+#####################################
 # check if char or string contains special chars, is numeric, is a negative number or alphabetic
 
 # String does not have special chars including space
@@ -505,12 +514,20 @@ d1.update(d2)
 s_k_t = sorted(m.items(),key=lambda i:i[0])
 s_v_t = sorted(m.items(),key=lambda i:i[1])
 
-# converted sorted tuple into new map sorted by
+# converted tuple into map by
 s_k_m = {}
-for k,v in s_k_t: s_k_m[k]=v
+for k,v in s_k_t:
+    s_k_m[k]=v
 
-s_v_m = {}
-for k,v in s_v_t: s_v_m[k]=v
+##### Deep clone a map by using dictionary compehension
+
+# manual copy at first level
+deep_copied_map = { k:v.copy() for k,v in map.items() }
+
+# in build method
+import copy
+deep_copied_map = copy.deepcopy(s_k_m)
+
 
 
 #####################################

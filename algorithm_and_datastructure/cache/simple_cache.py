@@ -15,16 +15,26 @@ A cache is like short-term memory: it has a limited amount of space, but is typi
 
 """
 
+data = [ chr(ord("a")+x) for x in range(10)]
 
-def sol(n):
-    return n * 2
+cache = { }
+
+def load_cache(x):
+    cache[x] = [1]
+
+def get_data(x):
+    if cache.get(x):
+        return "hit"
+    load_cache(x)
+    return "miss"
 
 
 test_data = [
-    (2, 4),
-    (4, 8),
+    ("a", "miss"),
+    ("a", "hit"),
+    ("b", "miss"),
 ]
 
 for given, expected in test_data:
-    assert expected == sol(given)
+    assert expected == get_data(given)
     print(f"Test passed for: given {given} and expected = {expected}")
