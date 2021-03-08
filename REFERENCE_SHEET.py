@@ -296,9 +296,7 @@ union = a.copy()
 union.extend(b)
 
 # list looping
-for x in a:
-    union.append(x)
-
+union = a.copy()
 for x in b:
     union.append(x)
 
@@ -309,6 +307,31 @@ set(a).intersection(b)
 
 # list compherension
 [x for x in a if x in b]
+
+#####################################
+# Find unique in 2 lists
+
+set(a).intersection(b)
+
+# list compherension
+[x for x in a if x in b]
+
+#####################################
+# Find unique or uncommon  in 2 lists ( difference)
+
+diff = []
+for x in a:
+    if x not in b and x not in diff:
+        diff.append(x)
+
+for x in b:
+    if x not in a and x not in diff:
+        diff.append(x)
+
+# convert list into set and do difference or minus operator
+diff = a.difference(b)
+diff = a - b
+
 
 #####################################
 # Reverse array without sorting using the slice function
@@ -462,7 +485,7 @@ set1.issuperset(set2)
 # sets equality operation
 set1 == set2
 
-# Delta - difference or uncommon elements
+# Delta - difference or uncommon or unique elements
 set1 - set2  # elements of set1 - set2
 set2 - set1  # elements of set1 - set2
 set1.difference(set2)
