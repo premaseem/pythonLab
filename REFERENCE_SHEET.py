@@ -291,6 +291,26 @@ b = [4, 5, 3, 7, 45, 8]
 sorted(a) == sorted(b)
 
 #####################################
+# Find union in 2 lists
+union = a.copy()
+union.extend(b)
+
+# list looping
+for x in a:
+    union.append(x)
+
+for x in b:
+    union.append(x)
+
+#####################################
+# Find intersection in 2 lists
+
+set(a).intersection(b)
+
+# list compherension
+[x for x in a if x in b]
+
+#####################################
 # Reverse array without sorting using the slice function
 
 arr = [1, 2, 5, 7, 5, 4, 3, 1]
