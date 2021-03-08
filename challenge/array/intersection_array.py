@@ -2,7 +2,6 @@
 A = [2, 3, 3, 5, 7, 11]
 B = [3, 3, 7, 15, 31]
 
-print(set(A).intersection(B))
 
 # brute force
 s=set()
@@ -11,15 +10,16 @@ for e in A:
         s.add(e)
 print(s)
 
-# Set conversion
-s=set()
-s1 = set(A)
-for e in B:
-    if e in s1:
-        s.add(e)
-print(s)
+# set conversion
+print(set(A).intersection(B))
 
-# double pointer logic
+# list comphresension
+inter = [x for x in A if x in B]
+print("list compherension", set(inter))
+
+
+
+# double pointer logic when sorted list
 
 def inter(A,B):
     s=set()
