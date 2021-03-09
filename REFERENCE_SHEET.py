@@ -437,7 +437,8 @@ for e in input:
 """ SET operation  """
 # set  has no duplicates.
 # set is unordered.
-# elemets must be immutable in set
+# elements must be immutable in set
+# list/Map or unhashable or object reference cannot be added in set, but class object can
 # It is also built in the same way as dict, where key and value is same.
 #####################################
 
@@ -572,6 +573,38 @@ import copy
 deep_copied_map = copy.deepcopy(s_k_m)
 
 
+#####################################
+""" Using default dictionary for data crunching from list /tuples  
+d = defaultdict(<datatype>)
+Instead of giving key missing error, it would set default key with default value of given datatype 
+Using the Python defaultdict Type for Handling Missing Keys and doing
+1. Grouping Items
+2. Grouping Unique Items
+3. Counting Items
+4. Accumulating Values or Aggregation
+"""
+#####################################
+from collections import defaultdict
+
+# 1. Grouping Items
+m = defaultdict(list)
+for k,v in l:
+    m[k].append(v)
+
+# 2. Grouping Unique Items
+m = defaultdict(set)
+for k,v in l:
+    m[k].add(v)
+
+# 3. Counting Items
+m = defaultdict(int)
+for k, _ in l:
+    m[k] += 1
+
+# 4. Accumulating Values or Aggregation
+m = defaultdict(float)
+for k,v in l:
+    m[k] += v
 
 #####################################
 """ Data driven Testing   """

@@ -8,7 +8,7 @@ Using the Python defaultdict Type for Handling Missing Keys and doing
 1. Grouping Items
 2. Grouping Unique Items
 3. Counting Items
-4. Accumulating Values or Aggrigation
+4. Accumulating Values or Aggregation
 
 """
 from collections import defaultdict
