@@ -120,6 +120,23 @@ GET_USER_ENDPOINT = Template("$API_ENDPOINT/v2.0/users/$USER_ID")
 final_string = GET_USER_ENDPOINT.substitute(API_ENDPOINT="localhost", USER_ID=786231)
 
 #####################################
+""" Random generation or picking """
+#####################################
+import random
+
+random.random()
+# will print random number between 0 and 1
+# >> 0.45432223345433
+
+random.randint(0,10)
+# will print random number between 0 and 10 ie given range
+# >> 0.45432223345433
+
+random.choice(["aseem","atul","sunita"])
+# will print one element in the given list randomly
+# >> sunita
+
+#####################################
 """ Variable assignments """
 #####################################
 # Swap the variable:
@@ -144,6 +161,10 @@ print("can vote {} ? {}".format(age, can_vote))
 e = "enter"
 toggle = "flop" if e == "flip" else "flip"
 
+# flip the boolean var
+flip = True
+flip = not flip
+
 #####################################
 """ Printing tricks """
 #####################################
@@ -159,8 +180,25 @@ print("{}:  \t  {} ".format(a, b).expandtabs(50))
 print("do it aligned{}:  \t  {} ".format(a, b).expandtabs(50))
 
 #####################################
-""" ARRAYS  LISTS """
+""" FUNCTIONS """
 #####################################
+# Function argument unpacking
+
+def myfunc(x, y, z):
+    print(x, y, z)
+
+tuple_vec = (1, 0, 1)
+dict_vec = {'x': 1, 'y': 0, 'z': 1}
+
+myfunc(*tuple_vec)
+# >> 1, 0, 1
+
+myfunc(**dict_vec)
+# >> 1, 0, 1
+
+
+#####################################
+""" ARRAYS  LISTS """
 #####################################
 # Figure out if list is not empty
 
@@ -549,7 +587,11 @@ d1.update(b=200, d=400)
 # Merge dictionary with update
 d1 = {'a': 10, 'b': 20, 'c': 30}
 d2 = {'b': 200, 'd': 400}
+# merged in existing
 d1.update(d2)
+
+# create new dict with unpacking
+merged_dict = {**d1, **d2}
 
 # d1 => {'a': 10, 'b': 200, 'c': 30, 'd': 400}
 

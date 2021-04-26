@@ -59,3 +59,18 @@ def binary_search_recursive_slice(a, e):
     return binary_search_recursive_slice(a,e)
 
 print(binary_search_recursive_slice(lst, 32))
+
+def b_searh_nested(n,lst):
+    def srch(n,lst,l,r):
+        if l >= r:
+            return False
+        m = (l + r) // 2
+        if n == lst[m]:
+            return True
+        if n > lst[m]:
+            l = m+1
+        else:
+            r = m-1
+        return srch(n,lst,l,r)
+    return srch(n,lst,0,len(lst))
+print(b_searh_nested(32,lst))
