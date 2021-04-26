@@ -1,5 +1,5 @@
 pymongo==2.7.1
-requests==2.3.0
+requests==2.20.0
 setuptools==1.1.5
 nose-parameterized==0.3.3
 pytest==2.6.3
