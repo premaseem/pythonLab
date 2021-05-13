@@ -442,32 +442,7 @@ mylist: List[Custom] = []
 #####################################
 """ Dictionaries or Maps"""
 #####################################
-# Define maps
-m1 = {}
-m2 = {}
 
-# add or update
-m1["k"] = "value"
-
-# get
-v = m1.get("k")  # None is return if key does not exists
-v = m1["k"]  # key error is thrown if key does not exists
-
-# delete or remove value
-del m1["k"]
-
-# iterate
-for k in m1:
-    print(k)
-
-for v in m1.values():
-    print(v)
-
-for k, v in m1.items():
-    print(k, v)
-
-# compare maps
-m1 == m2
 
 #####################################
 """ MATRIX  """
@@ -608,12 +583,27 @@ merged_dict = {**d1, **d2}
 
 # d1 => {'a': 10, 'b': 200, 'c': 30, 'd': 400}
 
+
+
 #### Sorting dictionary or map by Values ########
+# Sorting by dict comprehension
+x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
+{k: v for k, v in sorted(x.items(), key=lambda item: item[1])}
+# out=> {0: 0, 2: 1, 1: 2, 4: 3, 3: 4}
+
+
 # convert dict tuples and sort them by key or value using lambda
 s_k_t = sorted(m.items(),key=lambda i:i[0])
 s_v_t = sorted(m.items(),key=lambda i:i[1])
 
-# converted tuple into map by
+# Converted tuple into map by
+## dict(s_k_t)
+dict(s_k_t)
+
+dict(sorted(x.items(), key=lambda item: item[1]))
+# out=> {0: 0, 2: 1, 1: 2, 4: 3, 3: 4}
+
+## Iterate to convert
 s_k_m = {}
 for k,v in s_k_t:
     s_k_m[k]=v

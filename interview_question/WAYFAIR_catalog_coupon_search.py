@@ -51,7 +51,6 @@ def get_coupon(ui):
         if ui == element["Category Name"]:
             return element["Coupon Name"]
     prt = get_parent(ui)
-    # print("retry parent",prt)
     if prt:
         get_coupon(prt)
 
